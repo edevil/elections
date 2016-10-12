@@ -10,6 +10,7 @@ defmodule Elections.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
+     dialyzer: [plt_add_deps: :transitive],
      deps: deps()]
   end
 
@@ -37,6 +38,7 @@ defmodule Elections.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
+     {:dialyxir, "~> 0.3.5", only: [:dev]},
      {:cowboy, "~> 1.0"}]
   end
 
